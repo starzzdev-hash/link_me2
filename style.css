@@ -9,7 +9,7 @@
 
 body {
   min-height: 100vh;
-  background-image: url('fundoneon.png');
+  background-image: url('fundooriginal.png');
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -29,12 +29,12 @@ body {
   width: 100%;
   max-width: 450px;
 
-  /* 🔥 reduzimos o espaço vertical */
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 18px;
 
+  gap: 10px; /* 🔥 era 18px — sobe o conteúdo */
+  
   padding-top: 0;
   margin-top: 0;
 }
@@ -42,40 +42,39 @@ body {
 /* LOGO */
 .logo {
   width: 60vw;
-  max-width: 260px;
+  max-width: 350px; /* 🔥 aumentada */
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.7));
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-top: -10px; /* antes era 0 */  margin-bottom: 0;
 }
 
 /* CELULAR */
 @media (max-width: 480px) {
   .logo {
-    width: 70vw;
-    max-width: 210px;
+    width: 90vw;
+    max-width: 350px;
   }
 }
 
 /* TÍTULO */
 h1 {
   font-size: 1.8rem;
-  margin-top: -5px; /* 🔥 sobe mais ainda */
+  margin-top: -15px; /* 🔥 era -5px — sobe mais */
 }
 
 /* LINKS */
 .links {
   display: flex;
   flex-direction: column;
-  gap: 18px; /* 🔥 menos espaço vertical */
+  gap: 12px; /* 🔥 era 18px — sobe os botões */
   width: 100%;
 }
 
 .links a {
   text-decoration: none;
   color: #fff;
-  background:#26352E;
+  background:#00a759;
   padding: 15px 12px;
   border-radius: 50px;
   font-weight: 600;
@@ -88,31 +87,7 @@ h1 {
 /* RODAPÉ */
 .footer {
   font-size: 0.9rem;
-  margin-top: 5px;   /* 🔥 sobe o footer */
+  margin-top: 0;   /* 🔥 era 5px — sobe mais */
   margin-bottom: 10px;
   color: rgba(255,255,255,0.9);
-}
-
-/* --- NEON --- */
-.neon {
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  background: radial-gradient(circle, rgba(0,255,0,0.45), rgba(0,255,0,0) 70%);
-  filter: blur(30px);
-  opacity: 0.6;
-  pointer-events: none;
-}
-
-.neon-top-left { top: 0; left: 0; }
-.neon-top-right { top: 0; right: 0; }
-.neon-bottom-left { bottom: 0; left: 0; }
-.neon-bottom-right { bottom: 0; right: 0; }
-
-@media (max-width: 480px) {
-  .neon {
-    width: 150px;
-    height: 150px;
-    filter: blur(25px);
-  }
 }
